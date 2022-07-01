@@ -58,6 +58,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 // 对于获取token的rest api要允许匿名访问
                 .antMatchers("/register", "/auth/**", "/oauth2/**" ).permitAll()
+
+                // swagger 文档
+                .antMatchers("/note").permitAll().antMatchers("/swagger-resources/**", "/swagger-ui.html","/doc.html").permitAll()
+                .antMatchers("/webjars/**").permitAll().antMatchers("/*/api-docs").permitAll()
+
                 // 除上面外的所有请求全部需要鉴权认证
                 .anyRequest().authenticated()
 

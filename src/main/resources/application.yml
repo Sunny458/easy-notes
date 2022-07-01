@@ -1,10 +1,15 @@
 server:
   port: 8010
+  servlet:
+    context-path: /note
+
+knife4j:
+  production: false
 
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost/easy-notes
+      uri: mongodb://112.74.82.220/easy-notes
       port: 27017
   # 线程池配置
   thread-pool:
@@ -21,7 +26,7 @@ jwt:
   # 过期时间(毫秒)
   expiration: 36000000
   # 请求头Key
-  header: JWTHeaderName
+  header: Authorization
 
 # OAuth2客户端配置
 oauth2:
