@@ -29,6 +29,7 @@ public class UserController {
         vo.setUserId(loginUser.getUser().getUserId());
         vo.setUserName(loginUser.getUser().getUserName());
         vo.setClients(loginUser.getUser().getClients());
+
         return ResultUtil.success(vo);
     }
 
